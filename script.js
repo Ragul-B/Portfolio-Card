@@ -4,7 +4,7 @@ const particlesContainer = document.querySelector('.particles');
 function createParticle() {
     const particle = document.createElement('div');
     particle.classList.add('particle');
-    const size = Math.random() * 5 + 2 + 'px';
+    const size = Math.random() * 8 + 3 + 'px';
     particle.style.width = size;
     particle.style.height = size;
     particle.style.left = Math.random() * 100 + '%';
@@ -18,19 +18,6 @@ function createParticle() {
 }
 
 setInterval(createParticle, 200); // Continuously generate particles
-
-// Add particle style dynamically
-const style = document.createElement('style');
-style.textContent = `
-.particle {
-    position: absolute;
-    bottom: -10px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    animation: move 8s infinite ease-in-out;
-}
-`;
-document.head.append(style);
 
 // 3D Tilt Effect
 const card = document.querySelector('.card');
