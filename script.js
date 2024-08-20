@@ -1,5 +1,5 @@
 // JavaScript for creating floating particles
-const particlesContainer = document.querySelector('.particles');
+const particlesContainer = document.querySelector('#particles-js');
 
 function createParticle() {
     const particle = document.createElement('div');
@@ -8,6 +8,7 @@ function createParticle() {
     particle.style.width = size;
     particle.style.height = size;
     particle.style.left = Math.random() * 100 + '%';
+    particle.style.top = Math.random() * 100 + '%'; // Ensure particles start within the container
     particle.style.animationDuration = Math.random() * 5 + 3 + 's';
     particle.style.animationDelay = Math.random() * 2 + 's';
     particlesContainer.appendChild(particle);
