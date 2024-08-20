@@ -1,52 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-
+    <title>Portfolio Card with Particles</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="portfolio-card">
-        <div class="portfolio-image">
-            <img src="IMG_20240320_085144.jpg" alt="Person Image">
-        </div>
-        <div class="social-icons">
-            <a href="insta"><img src="favicon (18).ico" height="25px" width="auto" srcset=""></a>
-            <a href="#"><img src="favicon (15).ico" alt="linkedIn" height="25px" width="auto"></a>
-            <a href="#"><img src="favicon (14).ico" alt="github"  height="25px" width="auto"></a>
-        </div>
-        <div class="portfolio-details">
-            <h2>Front-End Developer</h2>
-            <p>I am a professional Front-End Developer with expertise in creating elegant and user-friendly web applications. My skills include HTML, CSS, JavaScript, React and more.</p>
-            <a href="#" class="view-details">View Details</a>
-            <div class="full-description">
-                <p>As a front-end developer, I specialize in crafting beautiful and responsive user interfaces. My focus is on creating seamless user experiences by leveraging the latest front-end technologies such as HTML5, CSS3, JavaScript, and modern frameworks like React and Vue.js.</p>
-                <button class="cancel-btn">Cancel</button>
+    <div class="particle-container">
+        <!-- Background Particle Container -->
+        <div class="particles"></div>
+        <div class="card">
+            <!-- Portfolio Card Content -->
+            <div class="profile-img">
+                <img src="your-image.jpg" alt="Profile">
             </div>
+            <h2>John Doe</h2>
+            <p>Web Developer & Designer</p>
+            <div class="social-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+                <a href="#">Portfolio</a>
+            </div>
+            <button class="contact-btn">Contact Me</button>
         </div>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const viewDetailsLink = document.querySelector(".view-details");
-            const fullDescription = document.querySelector(".full-description");
-            const cancelBtn = document.querySelector(".cancel-btn");
-            const portfolioCard = document.querySelector(".portfolio-card");
-
-            viewDetailsLink.addEventListener("click", function(event) {
-                event.preventDefault();
-                fullDescription.style.display = "block";
-                portfolioCard.classList.add("hide-background");
-            });
-
-            cancelBtn.addEventListener("click", function(event) {
-                event.preventDefault();
-                fullDescription.style.display = "none";
-                portfolioCard.classList.remove("hide-background");
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
