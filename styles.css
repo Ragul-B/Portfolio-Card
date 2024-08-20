@@ -3,12 +3,13 @@
     --primary-color: #2c3e50;
     --secondary-color: #34495e;
     --card-bg: #ffffff;
-    --accent-color: #2980b9;
-    --accent-hover: #1f6392;
+    --accent-color: #3498db;
+    --accent-hover: #2980b9;
     --btn-bg: #e67e22;
     --btn-hover: #d35400;
     --text-color: #2c3e50;
     --light-gray: #ecf0f1;
+    --particle-color: rgba(255, 255, 255, 0.7);
 }
 
 /* General Body Styling */
@@ -50,10 +51,10 @@ body {
     position: relative;
     z-index: 1;
     background: var(--card-bg);
-    border-radius: 15px;
-    padding: 30px;
+    border-radius: 12px;
+    padding: 20px;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     transform-style: preserve-3d;
     opacity: 0;
     transform: translateY(30px);
@@ -70,7 +71,7 @@ body {
 
 /* 3D Tilt Effect */
 .card:hover {
-    transform: rotateY(15deg) rotateX(-10deg);
+    transform: rotateY(10deg) rotateX(-10deg);
 }
 
 /* Profile Image Styling */
@@ -79,24 +80,24 @@ body {
     height: 120px;
     border-radius: 50%;
     margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
 }
 
 .profile-img img:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 /* Name and Description */
 h2 {
-    font-size: 26px;
+    font-size: 28px;
     color: var(--text-color);
     margin-bottom: 10px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 p {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--text-color);
     margin-bottom: 25px;
 }
@@ -110,9 +111,9 @@ p {
     text-decoration: none;
     color: #fff;
     background: var(--accent-color);
-    padding: 10px 15px;
+    padding: 12px 20px;
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 25px;
     transition: background 0.3s ease;
     font-weight: 500;
 }
@@ -127,7 +128,7 @@ p {
     border: none;
     background: var(--btn-bg);
     color: white;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s;
     font-weight: bold;
@@ -141,15 +142,15 @@ p {
 /* Particle Animations */
 @keyframes move {
     0% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    50% { transform: translateY(-30px); }
     100% { transform: translateY(0); }
 }
 
 .particle {
     position: absolute;
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--particle-color);
     border-radius: 50%;
-    animation: move 8s infinite ease-in-out;
+    animation: move 10s infinite ease-in-out;
 }
 
 /* Responsive Design */
