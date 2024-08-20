@@ -13,14 +13,16 @@ function createParticle() {
     particle.style.animationDelay = Math.random() * 2 + 's';
     particlesContainer.appendChild(particle);
 
+    // Remove the particle after its animation ends
     setTimeout(() => {
         particle.remove();
-    }, 8000); // Remove the particle after it floats out
+    }, parseFloat(particle.style.animationDuration) * 1000); // Duration in ms
 }
 
-setInterval(createParticle, 200); // Continuously generate particles
+// Create particles at regular intervals
+setInterval(createParticle, 200);
 
-// 3D Tilt Effect
+// 3D Tilt Effect for the Card
 const card = document.querySelector('.card');
 
 card.addEventListener('mousemove', (e) => {
