@@ -8,19 +8,17 @@ function createParticle() {
     particle.style.width = size;
     particle.style.height = size;
     particle.style.left = Math.random() * 100 + '%';
-    particle.style.top = Math.random() * 100 + '%'; // Ensure particles start within the container
+    particle.style.top = Math.random() * 100 + '%';
     particle.style.animationDuration = Math.random() * 5 + 3 + 's';
     particle.style.animationDelay = Math.random() * 2 + 's';
     particlesContainer.appendChild(particle);
 
-    // Remove the particle after its animation ends
     setTimeout(() => {
         particle.remove();
     }, parseFloat(particle.style.animationDuration) * 1000); // Duration in ms
 }
 
-// Create particles at regular intervals
-setInterval(createParticle, 200);
+setInterval(createParticle, 200); // Continuously generate particles
 
 // 3D Tilt Effect for the Card
 const card = document.querySelector('.card');
