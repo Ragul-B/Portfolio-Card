@@ -30,8 +30,8 @@ card.addEventListener('mousemove', (e) => {
     const x = e.clientX - centerX;
     const y = e.clientY - centerY;
 
-    const rotateX = -y / 20;
-    const rotateY = x / 20;
+    const rotateX = -y / 10; // Enhanced tilt effect
+    const rotateY = x / 10;  // Enhanced tilt effect
 
     card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 });
