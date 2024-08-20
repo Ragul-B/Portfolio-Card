@@ -4,18 +4,18 @@ const particlesContainer = document.querySelector('#particles-js');
 function createParticle() {
     const particle = document.createElement('div');
     particle.classList.add('particle');
-    const size = Math.random() * 8 + 3 + 'px';
+    const size = Math.random() * 12 + 5 + 'px';
     particle.style.width = size;
     particle.style.height = size;
     particle.style.left = Math.random() * 100 + '%';
     particle.style.top = Math.random() * 100 + '%';
-    particle.style.animationDuration = Math.random() * 5 + 3 + 's';
-    particle.style.animationDelay = Math.random() * 2 + 's';
+    particle.style.animationDuration = Math.random() * 7 + 3 + 's'; // Duration 3-10 seconds
+    particle.style.animationDelay = Math.random() * 5 + 's'; // Delay 0-5 seconds
     particlesContainer.appendChild(particle);
 
     setTimeout(() => {
         particle.remove();
-    }, parseFloat(particle.style.animationDuration) * 1000); // Duration in ms
+    }, parseFloat(particle.style.animationDuration) * 1000); // Remove after animation
 }
 
 setInterval(createParticle, 200); // Continuously generate particles
@@ -30,8 +30,8 @@ card.addEventListener('mousemove', (e) => {
     const x = e.clientX - centerX;
     const y = e.clientY - centerY;
 
-    const rotateX = -y / 15;
-    const rotateY = x / 15;
+    const rotateX = -y / 20;
+    const rotateY = x / 20;
 
     card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 });
@@ -44,8 +44,8 @@ card.addEventListener('mouseleave', () => {
 document.addEventListener('mousemove', (e) => {
     const particles = document.querySelectorAll('.particle');
     particles.forEach((particle) => {
-        const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-        const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+        const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
+        const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
         particle.style.transform = `translate(${moveX}px, ${moveY}px)`;
     });
 });
