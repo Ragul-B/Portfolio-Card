@@ -2,12 +2,13 @@
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #34495e;
-    --card-bg: #ffffff;
+    --card-bg: rgba(255, 255, 255, 0.1); /* Glassmorphism background */
+    --card-border: rgba(255, 255, 255, 0.2); /* Border for glassmorphism */
     --accent-color: #3498db;
     --accent-hover: #2980b9;
     --btn-bg: #e67e22;
     --btn-hover: #d35400;
-    --text-color: #2c3e50;
+    --text-color: #ffffff;
     --light-gray: #ecf0f1;
     --particle-color: rgba(255, 255, 255, 0.7);
 }
@@ -55,13 +56,14 @@ body {
     padding: 20px;
     text-align: center;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--card-border); /* Border for glassmorphism */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
     transform-style: preserve-3d;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
     width: 350px;
     max-width: 90%;
-    border: 1px solid var(--light-gray);
 }
 
 .card.revealed {
@@ -69,9 +71,9 @@ body {
     transform: translateY(0);
 }
 
-/* 3D Tilt Effect */
+/* Enhanced 3D Tilt Effect */
 .card:hover {
-    transform: rotateY(10deg) rotateX(-10deg);
+    transform: rotateY(20deg) rotateX(-15deg);
 }
 
 /* Profile Image Styling */
@@ -80,7 +82,7 @@ body {
     height: 120px;
     border-radius: 50%;
     margin-bottom: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow for glass effect */
     transition: transform 0.3s ease;
 }
 
